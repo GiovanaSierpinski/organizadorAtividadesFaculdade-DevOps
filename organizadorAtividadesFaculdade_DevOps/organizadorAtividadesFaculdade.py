@@ -49,13 +49,13 @@ def main():
 
     while True:
         print("\nOrganizador de Atividades da Faculdade")
-        print("----------------𓆩✧𓆪------------------")
-        print("1. Adicionar atividade")
-        print("2. Listar atividades")
-        print("3. Marcar atividade como concluída")
-        print("4. Remover atividade")
-        print("5. Sair")
         print("✧︶︶︶✧︶︶︶✧︶︶︶✧︶︶︶✧︶︶︶✧")
+        print("1. Adicionar atividade 📝")
+        print("2. Listar atividades 📜")
+        print("3. Marcar atividade como concluída ✔️")
+        print("4. Remover atividade ❌")
+        print("5. Sair")
+        print("----------------𓆩✧𓆪------------------")
 
         choice = input("Digite o número de uma opção: ")
 
