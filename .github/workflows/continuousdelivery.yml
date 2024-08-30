@@ -10,14 +10,14 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-        
+
       - name: Simulando Continuous Delivery
         uses: actions/upload-artifact@v4
         with:
-          name: projetodevops.zip
+          name: projetodevops
           path: |
-            '**/*.py'
-            '**/*.json'
+            **.py
+            **.json
             README.md
 
   deploy:
@@ -26,6 +26,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: projetodevops.zip
+          name: projetodevops
       - name: Display structure of downloaded files
         run: ls -R
