@@ -16,8 +16,8 @@ jobs:
        with:
         name: projetodevops.zip
         path: |
-          '**.py'
-          '**.json'
+          **.py
+          **.json
           README.md
         
   deploy:
@@ -29,4 +29,3 @@ jobs:
           name: projetodevops.zip
       - name: Display structure of downloaded files
         run: ls -R
-        
