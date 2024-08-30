@@ -17,6 +17,7 @@ jobs:
           name: projetodevops
           path: |
             **.py
+            **.json
             README.md
 
   deploy:
