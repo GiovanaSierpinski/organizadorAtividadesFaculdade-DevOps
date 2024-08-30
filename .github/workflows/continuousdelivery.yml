@@ -16,7 +16,7 @@ jobs:
        with:
         name: projetodevops.zip
         path: |
-          'main.py'
+          main.py
           README.md
 
   deploy:
