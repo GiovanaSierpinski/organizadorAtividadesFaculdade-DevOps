@@ -27,6 +27,9 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: Set PYTHONPATH to include src/
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
