@@ -18,10 +18,7 @@ class TestOrganizadorAtividades(unittest.TestCase):
         mock_file.assert_called_once_with("tasks.json", "w")
         handle = mock_file()
 
-        for call in handle.write.call_args_list:
-            print(f"Call arguments: {call}")
-
-        written_data = ''.join(str(arg) for args in handle.write.call_args_list for arg in args)
+        written_data = ''.join(arg for call in handle.write.call_args_list for arg in call[0])
 
         expected_data = json.dumps(tasks, indent=4) + "\n"
         
