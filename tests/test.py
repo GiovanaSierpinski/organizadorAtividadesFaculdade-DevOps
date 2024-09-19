@@ -18,10 +18,11 @@ class TestOrganizadorAtividades(unittest.TestCase):
         mock_file.assert_called_once_with("tasks.json", "w")
         handle = mock_file()
 
-        written_data = ''.join(args[0] for args in handle.write.call_args_list)
+        # Ajuste na forma como os dados escritos são extraídos
+        written_data = ''.join(call[0] for call in handle.write.call_args_list)
         
-        self.assertEqual(written_data, json.dumps(tasks, indent=4))
-        
+        self.assertEqual(written_data, json.dumps(tasks, indent=4) + "\n")
+
     def test_add_task(self):
         tasks = []
         add_task(tasks, "Somativa 1", "DevOps")
