@@ -16,7 +16,7 @@ jobs:
         with:
           linter: pylint
 
-  testes:
+testes:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v4
