@@ -20,8 +20,6 @@ class TestOrganizadorAtividades(unittest.TestCase):
         written_data = ''.join(call[0] for call in handle.write.call_args_list)
         self.assertEqual(written_data, json.dumps(tasks, indent=4))
 
-
-    @patch("builtins.open", new_callable=mock_open)
     def test_add_task(self):
         tasks = []
         add_task(tasks, "Somativa 1", "DevOps")
