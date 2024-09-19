@@ -1,6 +1,7 @@
 from src.main import *
 import unittest
 from unittest.mock import patch, mock_open
+import json
 
 class TestOrganizadorAtividades(unittest.TestCase):
 
@@ -18,21 +19,21 @@ class TestOrganizadorAtividades(unittest.TestCase):
         mock_file().write.assert_called_once_with(json.dumps(tasks, indent=4))
 
     @patch("builtins.open", new_callable=mock_open)
-    def test_add_task(self, mock_file):
+    def test_add_task(self):
         tasks = []
-        add_task(tasks, "Estudar física", "Física")
+        add_task(tasks, "Somativa 1", "DevOps")
         self.assertEqual(len(tasks), 1)
-        self.assertEqual(tasks[0]["name"], "Estudar física")
-        self.assertEqual(tasks[0]["subject"], "Física")
+        self.assertEqual(tasks[0]["name"], "Somativa 1")
+        self.assertEqual(tasks[0]["subject"], "DevOps")
         self.assertFalse(tasks[0]["completed"])
 
     def test_complete_task(self):
-        tasks = [{"name": "Estudar física", "subject": "Física", "completed": False}]
+        tasks = [{"name": "Somativa 1", "subject": "DevOps", "completed": False}]
         complete_task(tasks, 0)
         self.assertTrue(tasks[0]["completed"])
 
     def test_remove_task(self):
-        tasks = [{"name": "Estudar física", "subject": "Física", "completed": False}]
+        tasks = [{"name": "Somativa 1", "subject": "DevOps", "completed": False}]
         remove_task(tasks, 0)
         self.assertEqual(len(tasks), 0)
 
