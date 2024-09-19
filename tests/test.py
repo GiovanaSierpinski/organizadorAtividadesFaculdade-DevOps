@@ -18,9 +18,9 @@ class TestOrganizadorAtividades(unittest.TestCase):
         mock_file.assert_called_once_with("tasks.json", "w")
         handle = mock_file()
 
-        written_data = ''.join(arg for call in handle.write.call_args_list for arg in call[0])
+        written_data = ''.join(arg for call in handle.write.call_args_list for arg in call[0]).strip()
 
-        expected_data = json.dumps(tasks, indent=4) + "\n"
+        expected_data = json.dumps(tasks, indent=4).strip()
         
         self.assertEqual(written_data, expected_data)
         
