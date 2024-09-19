@@ -16,6 +16,7 @@ class TestOrganizadorAtividades(unittest.TestCase):
         tasks = [{"name": "Somativa 1", "subject": "DevOps", "completed": False}]
         save_tasks(tasks, "tasks.json")
         mock_file.assert_called_once_with("tasks.json", "w")
+        handle = mock_file()
         mock_file().write.assert_called_once_with(json.dumps(tasks, indent=4))
 
     @patch("builtins.open", new_callable=mock_open)
